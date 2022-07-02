@@ -16,13 +16,11 @@ function TodoItem({ todo, editTodo, deleteTodo }: Props) {
   }
 
   function handleDone() {
-    const newTodo = { ...todo, done: !todo.done };
-    editTodo(newTodo);
+    editTodo({ ...todo, done: !todo.done });
   }
 
   function handleEdit() {
-    const newTodo = { ...todo, editMode: !todo.editMode };
-    editTodo(newTodo);
+    editTodo({ ...todo, editMode: !todo.editMode });
   }
 
   function handleDelete() {
@@ -30,14 +28,12 @@ function TodoItem({ todo, editTodo, deleteTodo }: Props) {
   }
 
   function handleClickSubmit() {
-    const newTodo = { ...todo, name, editMode: false };
-    editTodo(newTodo);
+    editTodo({ ...todo, name, editMode: false });
   }
 
   function handleEnterSubmit(e: React.KeyboardEvent) {
     if (e.code === 'Enter') {
-      const newTodo = { ...todo, name, editMode: false };
-      editTodo(newTodo);
+      editTodo({ ...todo, name, editMode: false });
     }
   }
 
@@ -58,7 +54,7 @@ function TodoItem({ todo, editTodo, deleteTodo }: Props) {
           onClick={handleDone}
           className={`${
             todo.done ? 'line-through' : ''
-          } cursor-pointer border-b-2 border-transparent flex gap-2`}
+          } cursor-pointer border-b-2 border-transparent flex gap-2 select-none`}
         >
           {todo.name}
           {todo.done && <Check color="green" />}

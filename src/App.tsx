@@ -17,9 +17,7 @@ function App() {
   }
 
   function editTodo(todo: Todo) {
-    let newTodoList = [...todoList];
-
-    newTodoList = newTodoList.map((td) => {
+    const newTodoList = todoList.map((td) => {
       if (td._id === todo._id) {
         return todo;
       }
