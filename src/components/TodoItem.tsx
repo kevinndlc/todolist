@@ -37,6 +37,8 @@ function TodoItem({ todo, editTodo, deleteTodo }: Props) {
     }
   }
 
+  console.count('Item ' + todo.name) ;
+
   return (
     <li className="flex gap-2">
       {todo.editMode ? (
