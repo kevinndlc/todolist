@@ -33,7 +33,7 @@ function App() {
 
   return (
     <main className="card">
-      <h1 className="text-4xl font-bold mb-8 underline decoration-blue-400">
+      <h1 className="text-4xl font-bold mb-8 underline decoration-blue-500">
         Todo List
       </h1>
       <AddTodo addTodo={addTodo} />
